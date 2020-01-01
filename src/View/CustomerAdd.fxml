@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="403.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerAdd">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="header" stylesheets="@../Style/Style.css">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label styleClass="white-text" text="Customer " textFill="#380200">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label styleClass="off-red" text=":: Add" textFill="#380200">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="fieldId" disable="true" editable="false" minWidth="150.0" prefWidth="150.0" promptText="auto" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="fieldName" minWidth="150.0" prefWidth="150.0" promptText="required" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="fieldPhone" minWidth="150.0" prefWidth="150.0" promptText="required" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="fieldAddress" minWidth="150.0" prefWidth="150.0" promptText="required" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="fieldCity" minWidth="150.0" prefWidth="150.0" promptText="required" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal Code" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="fieldPostalCode" minWidth="150.0" prefWidth="150.0" promptText="required" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="fieldCountry" minWidth="150.0" prefWidth="150.0" promptText="required" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" spacing="10.0">
+                           <children>
+                              <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <CheckBox fx:id="cbActive" mnemonicParsing="false" selected="true" text="Active" />
+                                          <AnchorPane maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <AnchorPane maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="footer" stylesheets="@../Style/Style.css">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" layoutX="97.0" layoutY="-30.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="btnCancel" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#btnCancelAction" prefWidth="75.0" text="Cancel" />
+                        <Button fx:id="btnSave" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#btnSaveAction" prefWidth="75.0" text="Save" />
+                     </children>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

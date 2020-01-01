@@ -1,0 +1,70 @@
+
+.calendar-box .dateNumber {
+    -fx-background-color: lightgrey;
+    -fx-max-width: Infinity;
+    -fx-padding: 5;
+}
+
+.calendar-box .dateContent {
+    -fx-background-color: white;
+    -fx-max-width: Infinity;
+    -fx-padding: 5;
+}
+
+.calendar-box:hover .dateNumber {
+    -fx-text-fill: white;
+    -fx-background-color: grey;
+}
+
+.calendar-box:hover .dateContent {
+    -fx-background-color: lightblue;
+}
+
+.nav {
+    -fx-background-color: #380200;
+}
+
+.button-bar {
+    -fx-background-color: #F5F5F5;
+}
+
+.content {
+    -fx-background-color: #F5F5F5;
+}
+
+.header {
+    -fx-font-size: 16px;
+    -fx-background-color: #bc0004;
+}
+
+.header .button {
+    -fx-font-size: 13px;
+}
+
+.header .white-text {
+    -fx-text-fill: #FFFFFF;
+}
+
+.header .off-red {
+    -fx-text-fill: #fb0006;
+}
+
+.footer {
+    -fx-background-color: lightgrey;
+}
+
+.nav .button {
+    -fx-pref-height: 40;
+    -fx-background-radius: 0;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #380200;
+}
+
+.nav .button:hover {
+    -fx-cursor: HAND;
+    -fx-background-color: #bc0004;
+}
+
+.user-icon {
+    -fx-image: "@person.png";
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Style/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller._Dashboard">
+   <children>
+      <AnchorPane fx:id="appPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane styleClass="nav" stylesheets="@../Style/Style.css">
+                     <children>
+                        <VBox maxWidth="250.0" minWidth="250.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="80.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER" />
+                              <Button fx:id="navCustomers" alignment="BASELINE_LEFT" maxWidth="250.0" minWidth="250.0" mnemonicParsing="false" onAction="#navCustomersAction" prefWidth="250.0" text="Customers">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Style/username.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="navAppointments" alignment="BASELINE_LEFT" maxWidth="250.0" minWidth="250.0" mnemonicParsing="false" onAction="#navAppointmentsAction" prefWidth="250.0" text="Appointments">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Style/assignment.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="navCalendars" alignment="BASELINE_LEFT" maxWidth="250.0" minWidth="250.0" mnemonicParsing="false" onAction="#navCalendarsAction" prefWidth="250.0" text="Calendars">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Style/calendar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="navReports" alignment="BASELINE_LEFT" maxWidth="250.0" minWidth="250.0" mnemonicParsing="false" onAction="#navReportsAction" prefWidth="250.0" text="Reports">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Style/report.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <AnchorPane VBox.vgrow="ALWAYS" />
+                              <Button fx:id="navLogout" alignment="BASELINE_LEFT" maxWidth="250.0" minWidth="250.0" mnemonicParsing="false" onAction="#navLogoutAction" prefWidth="250.0" text="Log out">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Style/exit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </AnchorPane>
+                  <AnchorPane fx:id="contentPane" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loginPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #380200;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane VBox.vgrow="ALWAYS" />
+                  <AnchorPane>
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS" />
+                              <AnchorPane minWidth="225.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label fx:id="lblLogin" text="Please Login" textFill="WHITE" />
+                                          <HBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Style/username.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField fx:id="fieldUsername" promptText="username" HBox.hgrow="ALWAYS" />
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Style/password.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TextField fx:id="fieldTextPassword" promptText="password" />
+                                                      <PasswordField fx:id="fieldPassword" promptText="password" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </HBox>
+                                          <CheckBox fx:id="cbShowPassword" mnemonicParsing="false" text="Show Password" textFill="WHITE" />
+                                          <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLoginAction" text="Log In" />
+                                          <Label fx:id="lblError" text="Error" textFill="#fb0006" />
+                                          <Label fx:id="lblLanguage" text="default language" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fx:id="flagIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Style/EN.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
