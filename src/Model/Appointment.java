@@ -18,12 +18,16 @@ public class Appointment {
     private String start;
     private String end;
 
-    private String friendlyDate;
-    private String friendlyStart;
-    private String friendlyEnd;
+    private String startLocal;
+    private String endLocal;
+
+    private String timeUntil;
 
     private String userName;
     private String customerName;
+
+    private Timestamp tsStart;
+    private Timestamp tsEnd;
 
     public Appointment() {}
 
@@ -131,35 +135,51 @@ public class Appointment {
         this.customerName = customerName;
     }
 
-    public String getFriendlyDate() {
-        return friendlyDate;
-    }
-
-    public void setFriendlyDate(String friendlyDate) {
-        this.friendlyDate = friendlyDate;
-    }
-
-    public String getFriendlyStart() {
-        return friendlyStart;
-    }
-
-    public void setFriendlyStart(String friendlyStart) {
-        this.friendlyStart = friendlyStart;
-    }
-
-    public String getFriendlyEnd() {
-        return friendlyEnd;
-    }
-
-    public void setFriendlyEnd(String friendlyEnd) {
-        this.friendlyEnd = friendlyEnd;
-    }
-
     public String getDate() {
         return date;
     }
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getStartLocal() {
+        return startLocal;
+    }
+
+    public void setStartLocal(String startLocal) {
+        this.startLocal = startLocal;
+    }
+
+    public String getEndLocal() {
+        return endLocal;
+    }
+
+    public void setEndLocal(String endLocal) {
+        this.endLocal = endLocal;
+    }
+
+    public String getTimeUntil() {
+        return timeUntil;
+    }
+
+    public void setTimeUntil(String timeUntil) {
+        this.timeUntil = timeUntil;
+    }
+
+    public Timestamp getTsStart() {
+        return tsStart;
+    }
+
+    public void setTsStart(Timestamp tsStart) {
+        this.tsStart = tsStart;
+    }
+
+    public Timestamp getTsEnd() {
+        return tsEnd;
+    }
+
+    public void setTsEnd(Timestamp tsEnd) {
+        this.tsEnd = tsEnd;
     }
 }

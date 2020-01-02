@@ -54,6 +54,15 @@ public class AppointmentMain implements Initializable {
     private TableColumn<?, ?> columnEnd;
 
     @FXML
+    private TableColumn<?, ?> columnStartLocal;
+
+    @FXML
+    private TableColumn<?, ?> columnEndLocal;
+
+    @FXML
+    private TableColumn<?, ?> columnTimeUntil;
+
+    @FXML
     void btnAddAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/View/AppointmentAdd.fxml"));
@@ -113,6 +122,9 @@ public class AppointmentMain implements Initializable {
         columnDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         columnStart.setCellValueFactory(new PropertyValueFactory<>("start"));
         columnEnd.setCellValueFactory(new PropertyValueFactory<>("end"));
+        columnStartLocal.setCellValueFactory(new PropertyValueFactory<>("startLocal"));
+        columnEndLocal.setCellValueFactory(new PropertyValueFactory<>("endLocal"));
+        columnTimeUntil.setCellValueFactory(new PropertyValueFactory<>("timeUntil"));
         btnEdit.disableProperty().bind(Bindings.isEmpty(tblAppointments.getSelectionModel().getSelectedItems()));
         btnDelete.disableProperty().bind(Bindings.isEmpty(tblAppointments.getSelectionModel().getSelectedItems()));
         tblAppointments.setItems(dbAppointment.getAppointments());

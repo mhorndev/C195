@@ -229,18 +229,36 @@ public class dbAppointment {
                 appointment.setContact(rs.getString("contact"));
                 appointment.setType(rs.getString("type"));
                 appointment.setUrl(rs.getString("url"));
+                appointment.setTsStart(rs.getTimestamp("start"));
+                appointment.setTsEnd(rs.getTimestamp("end"));
 
                 LocalDateTime startLocalDateTime = rs.getTimestamp("start").toInstant()
                         .atZone(Objects.requireNonNull(getZoneId(rs.getString("location"))))
                         .toLocalDateTime();
+                appointment.setStart(startLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
 
                 LocalDateTime endLocalDateTime = rs.getTimestamp("end").toInstant()
                         .atZone(Objects.requireNonNull(getZoneId(rs.getString("location"))))
                         .toLocalDateTime();
+                appointment.setEnd(endLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
+
+                LocalDateTime startLocalDateTimeLocal = rs.getTimestamp("start").toInstant()
+                        .atZone(Objects.requireNonNull(ZoneId.systemDefault()))
+                        .toLocalDateTime();
+                appointment.setStartLocal(startLocalDateTimeLocal.format(DateTimeFormatter.ofPattern("h:mm a")));
+
+                LocalDateTime endLocalDateTimeLocal = rs.getTimestamp("end").toInstant()
+                        .atZone(Objects.requireNonNull(ZoneId.systemDefault()))
+                        .toLocalDateTime();
+                appointment.setEndLocal(endLocalDateTimeLocal.format(DateTimeFormatter.ofPattern("h:mm a")));
 
                 appointment.setDate(startLocalDateTime.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
-                appointment.setStart(startLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
-                appointment.setEnd(endLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
+
+                long diff = LocalDateTime.now().until(startLocalDateTimeLocal, ChronoUnit.MINUTES);
+                long quotient = diff/60;
+                long remainder = diff%60;
+
+                appointment.setTimeUntil(quotient +"h " + remainder + "m");
 
                 appointments.add(appointment);
             }
@@ -299,18 +317,36 @@ public class dbAppointment {
                 appointment.setContact(rs.getString("contact"));
                 appointment.setType(rs.getString("type"));
                 appointment.setUrl(rs.getString("url"));
+                appointment.setTsStart(rs.getTimestamp("start"));
+                appointment.setTsEnd(rs.getTimestamp("end"));
 
                 LocalDateTime startLocalDateTime = rs.getTimestamp("start").toInstant()
                         .atZone(Objects.requireNonNull(getZoneId(rs.getString("location"))))
                         .toLocalDateTime();
+                appointment.setStart(startLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
 
                 LocalDateTime endLocalDateTime = rs.getTimestamp("end").toInstant()
                         .atZone(Objects.requireNonNull(getZoneId(rs.getString("location"))))
                         .toLocalDateTime();
+                appointment.setEnd(endLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
+
+                LocalDateTime startLocalDateTimeLocal = rs.getTimestamp("start").toInstant()
+                        .atZone(Objects.requireNonNull(ZoneId.systemDefault()))
+                        .toLocalDateTime();
+                appointment.setStartLocal(startLocalDateTimeLocal.format(DateTimeFormatter.ofPattern("h:mm a")));
+
+                LocalDateTime endLocalDateTimeLocal = rs.getTimestamp("end").toInstant()
+                        .atZone(Objects.requireNonNull(ZoneId.systemDefault()))
+                        .toLocalDateTime();
+                appointment.setEndLocal(endLocalDateTimeLocal.format(DateTimeFormatter.ofPattern("h:mm a")));
 
                 appointment.setDate(startLocalDateTime.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
-                appointment.setStart(startLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
-                appointment.setEnd(endLocalDateTime.format(DateTimeFormatter.ofPattern("h:mm a")));
+
+                long diff = LocalDateTime.now().until(startLocalDateTimeLocal, ChronoUnit.MINUTES);
+                long quotient = diff/60;
+                long remainder = diff%60;
+
+                appointment.setTimeUntil(quotient +"h " + remainder + "m");
 
                 appointments.add(appointment);
             }

@@ -139,4 +139,6 @@ public class CustomerAdd implements Initializable {
     public void bind(CustomerMain parentController) {
         this.parentController = parentController;
     }
+
+
 }

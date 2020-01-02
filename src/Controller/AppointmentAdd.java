@@ -3,9 +3,16 @@ package Controller;
 import Model.*;
 import Database.*;
 
+import java.sql.Timestamp;
 import java.time.*;
 import java.net.URL;
+
+import Utility.Time;
 import javafx.fxml.FXML;
+
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 import java.util.Optional;
 import javafx.stage.Stage;
 import javafx.scene.control.*;
@@ -45,6 +52,16 @@ public class AppointmentAdd implements Initializable {
 
     @FXML
     private Button btnSave;
+
+
+    @FXML Label lblStartLocal;
+    @FXML Label lblStartPhoenix;
+    @FXML Label lblStartNewYork;
+    @FXML Label lblStartLondon;
+    @FXML Label lblEndLocal;
+    @FXML Label lblEndPhoenix;
+    @FXML Label lblEndNewYork;
+    @FXML Label lblEndLondon;
 
     private Appointment appointment;
 
@@ -106,6 +123,42 @@ public class AppointmentAdd implements Initializable {
                     cbEndTime.getSelectionModel().getSelectedItem())) {
                 validationErrors.append("'Start' must be less than 'End' \n");
                 validationErrors.append("'End' must be greater than 'Start' \n");
+            }
+        }
+
+        //check overlap
+        if (validationErrors.length()==0) {
+            LocalDateTime startLocalDateTime = LocalDateTime.parse(
+                    cbDate.getValue() + " " + cbStartTime.getSelectionModel().getSelectedItem(),
+                    DateTimeFormatter.ofPattern("yyyy-M-d h:mm a"));
+
+            LocalDateTime endLocalDateTime = LocalDateTime.parse(
+                    cbDate.getValue() + " " + cbEndTime.getSelectionModel().getSelectedItem(),
+                    DateTimeFormatter.ofPattern("yyyy-M-d h:mm a"));
+
+            ZonedDateTime startZonedDateTime = startLocalDateTime.atZone(Objects.requireNonNull(getZoneId(cbLocation.getSelectionModel().getSelectedItem())));
+            ZonedDateTime endZonedDateTime = endLocalDateTime.atZone(Objects.requireNonNull(getZoneId(cbLocation.getSelectionModel().getSelectedItem())));
+
+            Timestamp startTimestamp = Timestamp.from(startZonedDateTime.toInstant());
+            Timestamp endTimestamp = Timestamp.from(endZonedDateTime.toInstant());
+
+            ObservableList<Appointment> appointments = dbAppointment.getAppointments(consultant);
+
+            /**
+             * Elegant lambda to check overlap appointments
+             * I initially wrote 2 foreach loops totalling 12 lines, and simplified it to a single line lambda with the same result
+             * This is a representation of DeMorgans' Law
+             * Not (A Or B) <=> Not A And Not B
+             * Which translates to: (StartA < EndB)  and  (EndA > StartB)
+             * Which translates to: startTimestamp.before(obj.getTsEnd()) && endTimestamp.after(obj.getTsStart()
+             */
+
+            boolean overlap = appointments.stream().anyMatch(
+                    obj -> startTimestamp.before(obj.getTsEnd()) && endTimestamp.after(obj.getTsStart()));
+
+            if (overlap) {
+                validationErrors.append("You have tried to schedule an overlapping appointment \n\n");
+                validationErrors.append("Check the schedule for Consultant: " + consultant.getUserName() + " in the " + location + "\n");
             }
         }
 
@@ -219,4 +272,16 @@ public class AppointmentAdd implements Initializable {
             }
         });
     }
+
+    private ZoneId getZoneId(String location) {
+
+        switch(location)
+        {
+            case "New York Office" : return ZoneId.of("America/New_York");
+            case "Phoenix Office"  : return ZoneId.of("America/Phoenix");
+            case "London Office"   : return ZoneId.of("Europe/London");
+            default : return ZoneId.systemDefault();
+        }
+    }
+
 }
